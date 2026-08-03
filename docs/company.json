@@ -1,0 +1,16 @@
+{
+  "id": "22902080",
+  "company": "NETCITY TELECOM S.A.",
+  "brand": "NETCITY",
+  "status": "activ",
+  "location": [
+    "Bucuresti"
+  ],
+  "website": [
+    "http://net-city.ro"
+  ],
+  "career": [
+    "https://e-infra.ro/careers/"
+  ],
+  "scraperFile": "https://github.com/peviitor-scrapers/netcity-telecom-sa-python-scraper/actions/workflows/job-seeker-ro-spider.yml"
+}
