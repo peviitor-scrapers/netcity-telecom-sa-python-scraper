@@ -1,1 +1,1 @@
-"""Electrogrup Python scraper package."""
+"""NETCITY TELECOM Python scraper package."""
