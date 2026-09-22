@@ -8,11 +8,11 @@
 | Brand | NETCITY |
 | Website | http://net-city.ro |
 | Career | https://e-infra.ro/careers/ |
-| LastScraped | 2026-09-21 |
+| LastScraped | 2026-09-22 |
 
 ## Jobs (0)
 
 _No jobs found._
 
 ---
-_Generated at 2026-09-21T11:43:33Z_
+_Generated at 2026-09-22T10:46:51Z_
