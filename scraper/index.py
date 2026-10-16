@@ -299,7 +299,10 @@ def main(root=None):
     print("Copied scraper/config/company.json → docs/company.json")
 
     print("\n=== Step 4: Upsert jobs to SOLR ===")
-    upsert_jobs(transformed_payload["jobs"])
+    if transformed_payload["jobs"]:
+        upsert_jobs(transformed_payload["jobs"])
+    else:
+        print("No jobs found on any source - skipping upload (API rejects an empty payload).")
 
     scraped_urls = {job["url"] for job in transformed_payload["jobs"]}
     stale_urls = [url for url in existing_urls if url not in scraped_urls]
