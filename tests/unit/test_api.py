@@ -21,6 +21,12 @@ def test_query_solr_throws_on_http_error(mock_get):
         api.query_solr("22902080")
 
 
+def test_query_solr_404_no_jobs_is_empty(mock_get):
+    mock_get.return_value.status_code = 404
+    mock_get.return_value.text = '{"error":"No jobs for CIF 22902080","code":404}'
+    assert api.query_solr("22902080") == {"numFound": 0, "docs": []}
+
+
 def test_query_solr_missing_data_returns_empty(mock_get):
     mock_get.return_value.status_code = 200
     mock_get.return_value.json.return_value = {"success": False}

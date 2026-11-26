@@ -83,6 +83,10 @@ def query_solr(cif):
     """Queries jobs from Solr by company CIF via the peviitor API."""
     url = f"{API_BASE_URL}/scraper/jobs/?cif={cif}&rows=500"
     res = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+    # api.peviitor.ro answers 404 {"error":"No jobs for CIF ..."} when the company has no jobs indexed yet:
+    # that is an empty result, not a failure.
+    if res.status_code == 404:
+        return {"numFound": 0, "docs": []}
     if res.status_code != 200:
         raise RuntimeError(f"API jobs query error: {res.status_code} - {res.text}")
     data = res.json()
